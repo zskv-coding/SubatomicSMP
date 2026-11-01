@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "subatomicsmp",
+  "version": "${version}",
+  "name": "SubatomicSMP",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/subatomicsmp/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "net.zskv.subatomicsmp.client.SubatomicsmpDataGenerator"
+    ],
+    "client": [
+      "net.zskv.subatomicsmp.client.SubatomicsmpClient"
+    ],
+    "main": [
+      "net.zskv.subatomicsmp.Subatomicsmp"
+    ]
+  },
+  "mixins": [
+    "subatomicsmp.mixins.json",
+    {
+      "config": "subatomicsmp.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
